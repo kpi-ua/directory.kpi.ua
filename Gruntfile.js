@@ -7,6 +7,12 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
+
+var mountFolder = function (connect, dir) {
+  return connect.static(require('path').resolve(dir));
+};
+
+
 module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
@@ -24,6 +30,9 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
+
+
+
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -74,6 +83,16 @@ module.exports = function (grunt) {
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
+      },
+      server: {
+        options: {
+          middleware: function (connect) {
+            return [
+              modRewrite (['^[^\\.]*$ /index.html [L]']),
+              mountFolder(connect, 'app')
+            ];
+          }
+        }
       },
       livereload: {
         options: {
@@ -220,7 +239,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -425,6 +444,9 @@ module.exports = function (grunt) {
       }
     }
   });
+
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.registerTask('server', ['connect:server']);
 
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
