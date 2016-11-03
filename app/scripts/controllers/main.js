@@ -8,10 +8,28 @@
  * Controller of the directoryApp
  */
 angular.module('directoryApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, api) {
+
+    $scope.faculties = [];
+
+    reload();
+
+    function reload() {
+
+      api.getFaculties().then(function (response) {
+
+        $scope.faculties = response.map(function (o) {
+          return {
+            url: '/' + o.Name,
+            title: o.Title,
+            description: o.Description
+          };
+
+        });
+
+        $scope.$apply();
+
+      });
+
+    }
   });
