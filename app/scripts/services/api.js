@@ -35,6 +35,18 @@ angular.module('directoryApp')
     };
 
     /**
+     * Get authors list
+     */
+    this.getAuthors = function (page) {
+
+      var size = 25;
+
+      return Campus.execute('GET', 'Directory/GetAuthors?page=' + page + '&size=' + size).then(function (response) {
+        return response;
+      });
+    };
+
+    /**
      *
      */
     this.getGenerycTypes = function () {

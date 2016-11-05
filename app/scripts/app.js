@@ -16,7 +16,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap.pagination'
   ])
   .config(function ($routeProvider, $locationProvider) {
 
@@ -36,7 +37,7 @@ angular
         controller: 'CurriculumCtrl',
         controllerAs: 'curriculum'
       })
-      .when('/author', {
+      .when('/author/?uid', {
         templateUrl: 'views/author.html',
         controller: 'AuthorCtrl',
         controllerAs: 'author'
@@ -60,6 +61,11 @@ angular
         templateUrl: 'views/faculty.html',
         controller: 'FacultyCtrl',
         controllerAs: 'faculty'
+      })
+      .when('/author/list/:page?', {
+        templateUrl: 'views/author-list.html',
+        controller: 'AuthorListCtrl',
+        controllerAs: 'authorList'
       })
       .otherwise({
         redirectTo: '/'

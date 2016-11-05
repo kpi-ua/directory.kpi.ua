@@ -1,0 +1,17 @@
+<h1>Перелік авторів</h1>
+
+<div>
+  <table class="table">
+    <tr ng-repeat="author in authors">
+      <td>
+        <a href="{{ author.url }}">{{ author.name }}</a> {{ author.description }}
+      </td>
+    </tr>
+
+
+  </table>
+</div>
+
+<pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+
+<pre>Page: {{currentPage}} / {{totalPages}}</pre>
