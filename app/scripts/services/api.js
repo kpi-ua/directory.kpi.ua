@@ -42,7 +42,20 @@ angular.module('directoryApp')
       var size = 25;
 
       return Campus.execute('GET', 'Directory/GetAuthors?page=' + page + '&size=' + size).then(function (response) {
-        return response;
+
+        var pagination = {
+          currentPage: response.Paging.PageNumber,
+          pageCount: 10,
+          pageSize: response.Paging.PageSize,
+          totalItemsCount: response.Paging.TotalItemCount
+        };
+
+        var items = response.Data;
+
+        return {
+          items: items,
+          pagination: pagination
+        };
       });
     };
 

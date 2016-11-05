@@ -8,24 +8,31 @@
  * Controller of the directoryApp
  */
 angular.module('directoryApp')
-  .controller('AuthorListCtrl', function ($scope, $route, api) {
+  .controller('AuthorListCtrl', function ($scope, $route, $location, api) {
 
     $scope.authors = [];
-    $scope.currentPage = 1;
-    $scope.maxSize = 100;
-    $scope.totalItems = 1000;
-    $scope.totalPages = 20;
+    $scope.pagination = {};
 
     reload();
 
     function reload() {
 
-      var page = 1;
+      var page = !!$route.current.params.page ? $route.current.params.page : 1;
+
+      load(page);
+    }
+
+    /**
+     * Load author list
+     * @param page
+     */
+    function load(page) {
 
       api.getAuthors(page).then(function (response) {
 
+        $scope.pagination = response.pagination;
 
-        $scope.authors = response.Data.map(function (o) {
+        $scope.authors = response.items.map(function (o) {
 
           var delimiter = (!!o.AcademicDegree || !!o.Status) ? '–' : null;
 
@@ -40,11 +47,21 @@ angular.module('directoryApp')
         $scope.$apply();
 
       });
-
     }
 
     function toString(obj) {
       return !!obj ? obj.toString() : '';
     }
+
+    $scope.$watch('pagination.currentPage', function (newValue, oldValue) {
+
+      if (newValue != oldValue && !!newValue && !!oldValue) {
+
+        $location.url = '/author/list/' + $scope.pagination.currentPage;
+
+        $scope.pagination.currentPage = newValue;
+        load($scope.pagination.currentPage);
+      }
+    });
 
   });
