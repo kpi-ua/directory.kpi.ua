@@ -1,8 +1,6 @@
-<nav class="breadcrumb">
-  <a class="glyphicon glyphicon-home" href="/"></a> &gt; <b>Загальноуніверситетські інформаційні ресурси</b>
-  <a style="float: right;" href="javascript:history.back()"><i>Повернутися у попередній розділ</i></a>
-  <div class="clear"></div>
-</nav>
+<breadcrumbs>
+  <b>Загальноуніверситетські інформаційні ресурси</b>
+</breadcrumbs>
 
 
 <div class="col-md-12">
@@ -12,6 +10,8 @@
   та студентів Університету.<br>
 
   <h2>Тип матеріалу</h2>
+  <br/>
+  <progress-bar ng-if="loading"></progress-bar>
 
   <ul class="list">
     <li ng-repeat="type in types"><a href="{{type.url}}">{{type.title}}</a></li>

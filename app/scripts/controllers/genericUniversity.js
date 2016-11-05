@@ -9,7 +9,9 @@
  */
 angular.module('directoryApp')
   .controller('GenericUniversityCtrl', function ($scope, api) {
+
     $scope.types = [];
+    $scope.loading = true;
 
     reload();
 
@@ -25,6 +27,7 @@ angular.module('directoryApp')
 
         });
 
+        $scope.loading = false;
         $scope.$apply();
 
       });
