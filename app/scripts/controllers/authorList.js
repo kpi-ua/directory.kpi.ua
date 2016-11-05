@@ -12,6 +12,7 @@ angular.module('directoryApp')
 
     $scope.authors = [];
     $scope.pagination = {};
+    $scope.loading = true;
 
     reload();
 
@@ -28,10 +29,12 @@ angular.module('directoryApp')
      */
     function load(page) {
 
+      $scope.loading = true;
+      $scope.authors = [];
+
       api.getAuthors(page).then(function (response) {
 
         $scope.pagination = response.pagination;
-
         $scope.authors = response.items.map(function (o) {
 
           var delimiter = (!!o.AcademicDegree || !!o.Status) ? '–' : null;
@@ -44,6 +47,7 @@ angular.module('directoryApp')
 
         });
 
+        $scope.loading = false;
         $scope.$apply();
 
       });

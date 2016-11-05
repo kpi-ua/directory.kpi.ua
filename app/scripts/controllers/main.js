@@ -11,6 +11,7 @@ angular.module('directoryApp')
   .controller('MainCtrl', function ($scope, api) {
 
     $scope.faculties = [];
+    $scope.loading = true;
 
     reload();
 
@@ -27,6 +28,7 @@ angular.module('directoryApp')
 
         });
 
+        $scope.loading = false;
         $scope.$apply();
 
       });

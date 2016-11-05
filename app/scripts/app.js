@@ -48,7 +48,7 @@ angular
         controllerAs: 'generic'
       })
       .when('/generic/university', {
-        templateUrl: 'views/generic-university.html',
+        templateUrl: 'views/genericUniversity.html',
         controller: 'GenericUniversityCtrl',
         controllerAs: 'genericUniversity'
       })
@@ -63,7 +63,7 @@ angular
         controllerAs: 'faculty'
       })
       .when('/author/list/:page?', {
-        templateUrl: 'views/author-list.html',
+        templateUrl: 'views/authorList.html',
         controller: 'AuthorListCtrl',
         controllerAs: 'authorList'
       })

@@ -10,7 +10,8 @@
   власністю вузу.<br/>
 
   <h2>Інститути та факультети НТУУ "КПІ"</h2>
-
+  <br />
+  <progress-bar ng-if="loading"></progress-bar>
 
   <ul class="list">
     <li ng-repeat="faculty in faculties"><a href="{{faculty.url}}">{{faculty.title}}</a> - {{faculty.description}}</li>
