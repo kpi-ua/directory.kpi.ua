@@ -35,7 +35,8 @@ angular.module('directoryApp')
         $scope.cathedras = faculty.Cathedras.map(function (o) {
           return {
             url: '/' + faculty.Name + '/' + o.Name,
-            title: o.Title
+            title: o.Title,
+            description: o.Description
           };
 
         });

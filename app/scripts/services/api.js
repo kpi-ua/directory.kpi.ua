@@ -80,6 +80,16 @@ angular.module('directoryApp')
     };
 
     /**
+     * Get faculty information
+     */
+    this.getSpeciality = function (name) {
+      var url = 'Directory/GetSpeciality?name=' + name + '&light=false';
+      return Campus.execute('GET', url).then(function (response) {
+        return response.Data;
+      });
+    };
+
+    /**
      *
      */
     this.getGenerycTypes = function () {

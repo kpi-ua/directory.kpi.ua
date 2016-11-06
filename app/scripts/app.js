@@ -62,7 +62,12 @@ angular
         controller: 'UniversalCtrl',
         controllerAs: 'universal'
       })
-      .when('/:faculty/:cathedra/:id?', {
+      .when('/:faculty/:cathedra/:speciality', {
+        templateUrl: 'views/speciality.html',
+        controller: 'SpecialityCtrl',
+        controllerAs: 'speciality'
+      })
+      .when('/:faculty/:cathedra', {
         templateUrl: 'views/cathedra.html',
         controller: 'CathedraCtrl',
         controllerAs: 'cathedra'
@@ -77,6 +82,7 @@ angular
         controller: 'AuthorListCtrl',
         controllerAs: 'authorList'
       })
+
       .otherwise({
         redirectTo: '/'
       });

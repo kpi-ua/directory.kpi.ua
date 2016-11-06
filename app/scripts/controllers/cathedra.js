@@ -10,11 +10,13 @@
 angular.module('directoryApp')
   .controller('CathedraCtrl', function ($scope, $route, $location, api) {
 
-
     $scope.specialities = [];
     $scope.loading = true;
     $scope.cathedra = {};
     $scope.faculty = {};
+
+    $scope.facultyTitle = '';
+    $scope.facultyName = '';
 
     reload();
 
@@ -36,6 +38,7 @@ angular.module('directoryApp')
         };
 
         $scope.facultyTitle = cathedra.FacultyTitle;
+        $scope.facultyName = cathedra.FacultyName;
 
         $scope.specialities = cathedra.Specialities.map(function (o) {
           return {
