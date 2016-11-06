@@ -95,6 +95,7 @@ angular.module('directoryApp')
     this.getDiscipline = function (id, cathedra) {
       var url = 'Directory/GetDiscipline?id=' + id + '&cathedra=' + cathedra + '&light=false';
       return Campus.execute('GET', url).then(function (response) {
+        $rootScope.$apply();
         return response.Data;
       });
     };
@@ -105,6 +106,18 @@ angular.module('directoryApp')
     this.getCreditModule = function (id, subdivision) {
       var url = 'Directory/GetCreditModule?id=' + id + '&subdivision=' + subdivision + '&light=false';
       return Campus.execute('GET', url).then(function (response) {
+        $rootScope.$apply();
+        return response.Data;
+      });
+    };
+
+    /**
+     * Get kind information
+     */
+    this.getKind = function (id, creditModuleId) {
+      var url = 'Directory/GetKind?id=' + id + '&creditModuleId=' + creditModuleId + '&light=false';
+      return Campus.execute('GET', url).then(function (response) {
+        $rootScope.$apply();
         return response.Data;
       });
     };
