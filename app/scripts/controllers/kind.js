@@ -68,13 +68,14 @@ angular.module('directoryApp')
         {
           title: kind.Title,
           name: kind.Name,
-          description: kind.Description
+          description: kind.Description,
         };
 
 
         $scope.eirs = kind.Items.map(function (o) {
+          debugger;
           return {
-            url: '/curriculum/' + o.Id,
+            url: '/curriculum/' + o.IrId,
             title: o.Title,
             description: o.Description,
             irName: o.IrName,

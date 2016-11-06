@@ -37,7 +37,7 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/curriculum', {
+      .when('/curriculum/:id', {
         templateUrl: 'views/curriculum.html',
         controller: 'CurriculumCtrl',
         controllerAs: 'curriculum'

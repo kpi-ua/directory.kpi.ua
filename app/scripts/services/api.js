@@ -123,7 +123,18 @@ angular.module('directoryApp')
      *
      */
     this.getGenerycTypes = function () {
-      return campus.execute('GET', 'Directory/GetGenericKinds?subdivisionName=').then(function (response) {
+      var url = 'Directory/GetGenericKinds?subdivisionName=';
+      return campus.execute('GET', url).then(function (response) {
+        return response.Data;
+      });
+    };
+
+    /**
+     *
+     */
+    this.getCurriculum = function (name) {
+      var url = 'Directory/GetCurriculum?name=' + name;
+      return campus.execute('GET', url).then(function (response) {
         return response.Data;
       });
     };
