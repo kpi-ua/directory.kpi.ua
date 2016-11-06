@@ -8,10 +8,18 @@
  * Controller of the directoryApp
  */
 angular.module('directoryApp')
-  .controller('CreditmoduleCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('CreditModuleCtrl', function ($scope, $route, $location, api) {
+
+    $scope.creditModule = {};
+
+    $scope.loading = true;
+    $scope.cathedraTitle = '';
+    $scope.cathedraName = '';
+    $scope.facultyTitle = '';
+    $scope.facultyName = '';
+    $scope.specialityTitle = {};
+    $scope.specialityCode = {};
+    $scope.disciplineTitle = {};
+    $scope.disciplineId = {};
+
   });

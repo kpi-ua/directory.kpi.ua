@@ -8,7 +8,7 @@
  * Controller of the directoryApp
  */
 angular.module('directoryApp')
-  .controller('CurriculumCtrl', function () {
+  .controller('CurriculumCtrl', function ($scope, $route, $location, api) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

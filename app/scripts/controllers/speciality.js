@@ -11,6 +11,7 @@ angular.module('directoryApp')
   .controller('SpecialityCtrl', function ($scope, $route, $location, api) {
 
     $scope.speciality = {};
+
     $scope.loading = true;
     $scope.cathedraTitle = '';
     $scope.cathedraName = '';
@@ -21,7 +22,7 @@ angular.module('directoryApp')
 
     function reload() {
 
-      var name = !!$route.current.params.speciality ? $route.current.params.speciality : '';
+      var code = !!$route.current.params.speciality ? $route.current.params.speciality : '';
       $scope.facultyName = !!$route.current.params.faculty ? $route.current.params.faculty : '';
       $scope.cathedraName = !!$route.current.params.cathedra ? $route.current.params.cathedra : '';
 
@@ -35,7 +36,7 @@ angular.module('directoryApp')
         $scope.$apply();
       });
 
-      api.getSpeciality(name).then(function (speciality) {
+      api.getSpeciality(code).then(function (speciality) {
 
         $scope.speciality =
         {

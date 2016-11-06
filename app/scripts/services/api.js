@@ -80,10 +80,20 @@ angular.module('directoryApp')
     };
 
     /**
-     * Get faculty information
+     * Get speciality information
      */
     this.getSpeciality = function (name) {
       var url = 'Directory/GetSpeciality?name=' + name + '&light=false';
+      return Campus.execute('GET', url).then(function (response) {
+        return response.Data;
+      });
+    };
+
+    /**
+     * Get discipline information
+     */
+    this.getDiscipline = function (id, cathedra) {
+      var url = 'Directory/GetDiscipline?id=' + id + '&cathedra=' + cathedra + '&light=false';
       return Campus.execute('GET', url).then(function (response) {
         return response.Data;
       });
