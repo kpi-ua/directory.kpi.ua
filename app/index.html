@@ -1,94 +1,241 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="directoryApp">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<head>
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+  <base href="/">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+  <meta charset="utf-8">
 
-            <a class="navbar-brand" href="#/">directory</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <meta name="viewport" content="width=device-width"/>
+  <title>Національний технічний університет України "Київський політехнічний інститут імені Ігоря Сікорського" – Каталог Інформаційних ресурсів</title>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico"/>
+
+  <meta name="description" content="@ViewBag.Description">
+  <meta name="keywords" content="@ViewBag.Keywords">
+  <meta name="author" content="@ViewBag.Author">
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" type="text/css"
+        href="http://fonts.googleapis.com/css?family=Scada:400italic,700italic,400,700&subset=latin,cyrillic"/>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css"/>
+
+</head>
+
+<body ng-app="directoryApp">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<nav class="main-menu">
+  <a href="http://ecampus.kpi.ua/">Електронний кампус</a>
+  <a href="/">Інститути та факультети НТУУ "КПІ"</a>
+  <a href="/generic/university">Загальноуніверситетські інформаційні ресурси</a>
+  <a href="/author/list">Автори інформаційних ресурсів</a> |
+  <a class="search-button" href="#">Пошук</a>
+
+  <div class="search" style="display: none;">
+    <script>
+      (function () {
+        var cx = '003980677936772383137:wmregn4lyzc';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+          '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
     </script>
+    <gcse:search></gcse:search>
+  </div>
+</nav>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+<div class="container main">
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
+  <header class="row">
+    <div class="logo col-md-1">
+      <a href="/#/"><img alt="НТУУ КПІ" src="/Images/logo.png"/></a>
+    </div>
+    <div class="col-md-11">
+      <h2>Національний технічний університет України &quot;Київський політехнічний інститут імені Ігоря Сікорського&quot;</h2>
+      <h1>Каталог інформаційних ресурсів</h1>
+    </div>
+  </header>
+
+
+  <section class="row">
+    <!--@RenderSection("book", false)-->
+  </section>
+
+  <section class="row content">
+    <!--@if (showBreadcrumb)-->
+    <!--{-->
+    <!--<nav class="breadcrumb">-->
+      <!--@Html.Raw(ViewBag.Breadcrumb)-->
+    <!--</nav>-->
+    <!--}-->
+
+    <div ng-view=""></div>
+
+  </section>
+</div>
+
+<footer class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <a href="http://kpi.ua/about" title="Про НТУУ &quot;КПІ&quot;: загальна інформація та новини"><strong>НТУУ "КПІ"</strong></a>
+      <ul>
+        <li><a href="http://kpi.ua/kpi_about"
+               title="Загальна інформація про Національний технічний університет України">Університет сьогодні</a></li>
+        <li><a href="http://kpi.ua/kpi_faculty" title="Інститути та факультети НТУУ &quot;КПІ&quot;">Інститути &amp;
+          факультети</a></li>
+        <li><a href="http://kpi.ua/almamater" title="Історія НТУУ &quot;КПІ&quot; та його підрозділів">Історія НТУУ
+          "КПІ"</a></li>
+        <li><a href="http://kpi.ua/kpi_links" title="Департамент міжнародного співробітництва НТУУ &quot;КПІ&quot;">Міжнародне
+          співробітництво</a></li>
+        <li><a href="http://kpi.ua/location"
+               title="Територіальне розміщення університету КПІ, карта, мапа КПІ, схеми доїзду до корпусів">Адреса та
+          карта НТУУ "КПІ"</a></li>
+        <li><a href="http://kpi.ua/union" title="Профспiлкові організації НТУУ «КПІ»">Профспiлкові організації НТУУ
+          «КПІ»</a></li>
+        <li><a href="http://kpi.ua/kp" title="Щотижнева газета &quot;Київський політехнік&quot;">Газета "Київський
+          політехнік</a></li>
+        <li><a href="http://kpi.ua/offices">Університетські новини</a></li>
+        <li><a href="http://intellect.kpi.ua">Платформа Intellect</a></li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <a href="http://kpi.ua/admission"
+         title="Інформація для вступників в НТУУ &quot;КПІ&quot; громадян України"><strong>Вступ</strong></a>
+      <ul>
+        <li><a href="http://kpi.ua/work" title="Приймальна комісія НТУУ &quot;КПІ&quot;">Приймальна комісія</a></li>
+        <li><a href="http://kpi.ua/rule-admission"
+               title="Правила прийому до Національного технічного університету України «Київський політехнічний інститут»">Правила
+          прийому</a></li>
+        <li><a href="http://kpi.ua/under">Доуніверситетська пiдготовка</a></li>
+        <li><a href="http://kpi.ua/training" title="Друга освіта в НТУУ &quot;КПІ&quot;">Післядипломна освіта</a></li>
+        <li><a href="http://kpi.ua/preparation">Вступ іноземних громадян</a></li>
+        <li><a href="http://kpi.ua/open_doors">Дні відкритих дверей</a></li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <a href="http://kpi.ua/education"><strong>Освіта</strong></a>
+      <ul>
+        <li><a href="http://kpi.ua/specialities" title="Напрями та спеціальності підготовки фахівців у НТУУ “КПІ”">Напрями
+          та спеціальності</a></li>
+        <li><a href="http://kpi.ua/regulations"
+               title="Навчання студентів в університеті здійснюється за такими формами - денна (очна); заочна, дистанційна; екстернатна.">Організація
+          навчання</a></li>
+        <li><a href="http://kpi.ua/bologna" title="Болонський процес">Болонський процес</a></li>
+        <li><a href="http://ecampus.kpi.ua" title="Електронний кампус">Електронний кампус</a></li>
+        <li><a href="http://kpi.ua/certification" title="Проведення атестації студентів та семестрового контролю">Атестації
+          студентів</a></li>
+        <li><a href="http://kpi.ua/monitoring"
+               title="Комплексний моніторинг якості підготовки фахівців - Контроль та оцінка якості навчання">Комплексний
+          моніторинг</a></li>
+        <li><a href="http://kpi.ua/mobility">Академічна мобільність</a></li>
+        <li><a href="http://kpi.ua/education_department">Новини освіти</a></li>
+      </ul>
+    </div>
+    <div class="col-md-2">
+      <a href="http://kpi.ua/science"><strong>Наука та інновації</strong></a>
+      <ul>
+        <li><a href="http://kpi.ua/reward">Лауреати державних премій </a></li>
+        <li><a href="http://kpi.ua/research" title="Перелік напрямів фундаментальних та прикладних наукових досліджень">Напрями
+          досліджень</a></li>
+        <li><a href="http://kpi.ua/web_aspirantura">Аспірантура &amp; Докторантура</a></li>
+        <li><a href="http://kpi.ua/department" title="Наукові підрозділи НТУУ &quot;КПІ&quot;">Наукові підрозділи</a>
+        </li>
+        <li><a href="http://kpi.ua/publication" title="Наукові видання НТУУ &quot;КПІ&quot;">Наукові видання </a></li>
+        <li><a href="http://kpi.ua/norma">Конкурси НДЧ</a></li>
+        <li><a href="http://kpi.ua/seminar" title="Конференції, семінари, форуми, з'їзди">План наукових заходів</a></li>
+        <li><a href="http://kpi.ua/science_department">Новини науки</a></li>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <a href="http://kpi.ua/students"><strong>Студентське життя</strong></a>
+      <ul>
+        <li><a href="http://kpi.ua/organizations" title="Студентські організації">Студентські організації</a></li>
+        <li><a href="http://kpi.ua/media" title="Студентські медіа ресурси">Студентські медіа ресурси</a></li>
+        <li><a href="http://kpi.ua/stipend" title="Стипендії, персональні та академічні стипендії, соціальна допомога, стипендіальне та соціальне забезпечення студентів">Стипендіальне та соціальне забезпечення</a></li>
+        <li><a href="http://kpi.ua/athletics">Спорт</a></li>
+        <li><a href="http://kpi.ua/health" title="Медичне обслуговування та відпочинок">Медицина та відпочинок</a></li>
+        <li><a href="http://kpi.ua/amateur" title="Студентське дозвілля: культура і мистецтво">Культура і мистецтво</a>
+        </li>
+        <li><a href="http://kpi.ua/sec">Працевлаштування</a></li>
+        <li><a href="http://kpi.ua/board-net">Студентські новини</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      Національний технічний університет України "Київський політехнічний інститут", 1998-@DateTime.Now.Year &copy;<br/>
+      Адреса НТУУ "КПI": Україна, 03056, м.Київ-56, проспект Перемоги, 30<br/>
+      Довiдка телефонної станцiї НТУУ "КПI": (+38 044) 236-79-89<br/>
+    </div>
+    <div class="col-md-6">
+      Розробник каталогу - <a href="http://kbis.kpi.ua">конструкторське бюро "Інформаційних систем"</a>.<br/>
+      Використання матеріалу сайту тільки з обов’язковим посиланням на <a href="http://directory.kpi.ua">directory.kpi.ua</a>.<br/>
+      Каталог створено в рамках проекту "<a href="http://ecampus.kpi.ua">Електронний кампус КПI</a>". Портал розробників
+      - <a href="http://github.com/kpi-ua">github.com/kpi-ua</a>.<br/>
+    </div>
+  </div>
+</footer>
+
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-ui-bootstrap-pagination/pagination.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/about.js"></script>
+<script src="scripts/controllers/curriculum.js"></script>
+<script src="scripts/controllers/author.js"></script>
+<script src="scripts/controllers/generic.js"></script>
+<script src="scripts/controllers/genericUniversity.js"></script>
+<script src="scripts/controllers/universal.js"></script>
+<script src="scripts/services/api.js"></script>
+<script src="scripts/controllers/faculty.js"></script>
+<script src="scripts/controllers/authorList.js"></script>
+<script src="scripts/directives/progressBar.js"></script>
+<script src="scripts/directives/breadcrumbs.js"></script>
+<script src="scripts/controllers/search.js"></script>
+<script src="scripts/controllers/cathedra.js"></script>
+<script src="scripts/controllers/speciality.js"></script>
+<script src="scripts/controllers/discipline.js"></script>
+<script src="scripts/controllers/creditModule.js"></script>
+<script src="scripts/controllers/kind.js"></script>
+<script src="scripts/services/campus.js"></script>
+<!-- endbuild -->
+
 </body>
+
 </html>

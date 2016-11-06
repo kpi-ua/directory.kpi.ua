@@ -1,0 +1,111 @@
+<breadcrumbs ng-if="!loading">
+  <b>Електроний матеріал</b>
+</breadcrumbs>
+
+<div class="col-md-12" ng-if="loading">
+  <br/>
+  <progress-bar ng-if="loading"></progress-bar>
+</div>
+
+<div class="col-md-12" ng-if="!loading">
+
+  <h1>{{curriculum.IrName}}</h1>
+
+  <div class="table-responsive">
+    <table class="table table-condensed table-striped table-hover">
+      <tr>
+        <td><strong>Анотація</strong></td>
+        <td>{{curriculum.Annotation}}</td>
+      </tr>
+      <tr>
+        <td><strong>Опис</strong></td>
+        <td>{{curriculum.IrDescription}}</td>
+      </tr>
+      <tr>
+        <td><strong>Бiблiографiчна</strong> назва</td>
+        <td>{{curriculum.Bibliograph}}</td>
+      </tr>
+      <tr>
+        <td><strong>Вид ЕIР</strong></td>
+        <td>{{curriculum.IrKind}}</td>
+      </tr>
+      <tr>
+        <td><strong>Автори - співробітники КПИ</strong></td>
+        <td>{{curriculum.Author}}</td>
+      </tr>
+      <tr>
+        <td><strong>Автори - НЕ співробітники КПИ</strong></td>
+        <td>{{curriculum.NotKpiAuthor}}</td>
+      </tr>
+      <tr>
+        <td><strong>Гриф</strong></td>
+        <td>{{curriculum.Stamp}}</td>
+      </tr>
+      <tr>
+        <td><strong>Підрозділ</strong></td>
+        <td>{{curriculum.IrSubdivision}}</td>
+      </tr>
+      <tr>
+        <td><strong>Назва рядку РНП</strong></td>
+        <td>{{curriculum.LongNameFull}}</td>
+      </tr>
+      <tr>
+        <td><strong>Тип ЕIР</strong></td>
+        <td>{{curriculum.IsCommon}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div ng-if="!!files && files.length > 0">
+
+    <h2>Файли та матеріали</h2>
+    <div class="table-responsive">
+      <table class="table table-condensed table-striped table-hover">
+        @foreach (Core.Link file in Model.Files)
+        {
+        <tr>
+          <td>
+            <strong>
+              @file.Text
+            </strong>
+          </td>
+          <td>
+            <a target="_download" class="btn btn-default" href="@file.Url"><i
+              class="glyphicon glyphicon-floppy-save"></i>
+              Завантажити</a>
+          </td>
+        </tr>
+        }
+      </table>
+    </div>
+  </div>
+
+  <div ng-if="!!languages && languages.length > 0">
+
+    <h2>Інші мови</h2>
+    <ul class="pagination">
+      @foreach (var language in Model.Languages)
+      {
+      var url = String.Format("/curriculum/{0}/{1}", Model.Curriculum.IrId, language.Name);
+      <li><a href="@url">@language.Code</a></li>
+      }
+    </ul>
+
+  </div>
+
+  <h2>Читається на таких спеціальностях</h2>
+  <ul class="list">
+    <li ng-repeat="speciality in specialities">
+      <a href="{{speciality.url}}">{{speciality.code}} - {{speciality.title}}</a>
+      {{speciality.description}}
+    </li>
+  </ul>
+
+  <h2>Читається на таких кафедрах</h2>
+  <ul class="list">
+    <li ng-repeat="cathedra in cathedras"><a href="{{cathedra.url}}">{{cathedra.title}}</a> {{ cathedra.description }}
+    </li>
+  </ul>
+
+
+</div>
