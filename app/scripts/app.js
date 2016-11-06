@@ -103,6 +103,6 @@ angular
 
       $locationProvider.html5Mode(true);
 
-      Campus.setApiEndpoint('https://api.campus.kpi.ua/');
+      //Campus.setApiEndpoint('https://api.campus.kpi.ua/');
 
   });

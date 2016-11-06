@@ -8,28 +8,28 @@
  * Service in the directoryApp.
  */
 angular.module('directoryApp')
-  .service('api', function ($rootScope) {
+  .service('api', function (campus) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     /**
      * Set API endpoint
      */
     this.setApiEndpoint = function (url) {
-      Campus.setApiEndpoint(url);
+      campus.setApiEndpoint(url);
     };
 
     /**
      * Get API endpoint
      */
     this.getApiEndpoint = function () {
-      return Campus.getApiEndpoint();
+      return campus.getApiEndpoint();
     };
 
     /**
      * Get faculties list
      */
     this.getFaculties = function () {
-      return Campus.execute('GET', 'Directory/GetFaculties').then(function (response) {
+      return campus.execute('GET', 'Directory/GetFaculties').then(function (response) {
         return response.Data;
       });
     };
@@ -41,7 +41,7 @@ angular.module('directoryApp')
 
       var size = 25;
 
-      return Campus.execute('GET', 'Directory/GetAuthors?page=' + page + '&size=' + size).then(function (response) {
+      return campus.execute('GET', 'Directory/GetAuthors?page=' + page + '&size=' + size).then(function (response) {
 
         var pagination = {
           currentPage: response.Paging.PageNumber,
@@ -64,7 +64,7 @@ angular.module('directoryApp')
      */
     this.getFaculty = function (name) {
       var url = 'Directory/GetFaculty?name=' + name + '&light=false';
-      return Campus.execute('GET', url).then(function (response) {
+      return campus.execute('GET', url).then(function (response) {
         return response.Data;
       });
     };
@@ -74,7 +74,7 @@ angular.module('directoryApp')
      */
     this.getCathedra = function (name) {
       var url = 'Directory/GetCathedra?name=' + name + '&light=false';
-      return Campus.execute('GET', url).then(function (response) {
+      return campus.execute('GET', url).then(function (response) {
         return response.Data;
       });
     };
@@ -84,7 +84,7 @@ angular.module('directoryApp')
      */
     this.getSpeciality = function (name) {
       var url = 'Directory/GetSpeciality?name=' + name + '&light=false';
-      return Campus.execute('GET', url).then(function (response) {
+      return campus.execute('GET', url).then(function (response) {
         return response.Data;
       });
     };
@@ -94,8 +94,7 @@ angular.module('directoryApp')
      */
     this.getDiscipline = function (id, cathedra) {
       var url = 'Directory/GetDiscipline?id=' + id + '&cathedra=' + cathedra + '&light=false';
-      return Campus.execute('GET', url).then(function (response) {
-        $rootScope.$apply();
+      return campus.execute('GET', url).then(function (response) {
         return response.Data;
       });
     };
@@ -105,8 +104,7 @@ angular.module('directoryApp')
      */
     this.getCreditModule = function (id, subdivision) {
       var url = 'Directory/GetCreditModule?id=' + id + '&subdivision=' + subdivision + '&light=false';
-      return Campus.execute('GET', url).then(function (response) {
-        $rootScope.$apply();
+      return campus.execute('GET', url).then(function (response) {
         return response.Data;
       });
     };
@@ -116,8 +114,7 @@ angular.module('directoryApp')
      */
     this.getKind = function (id, creditModuleId) {
       var url = 'Directory/GetKind?id=' + id + '&creditModuleId=' + creditModuleId + '&light=false';
-      return Campus.execute('GET', url).then(function (response) {
-        $rootScope.$apply();
+      return campus.execute('GET', url).then(function (response) {
         return response.Data;
       });
     };
@@ -126,7 +123,7 @@ angular.module('directoryApp')
      *
      */
     this.getGenerycTypes = function () {
-      return Campus.execute('GET', 'Directory/GetGenericKinds?subdivisionName=').then(function (response) {
+      return campus.execute('GET', 'Directory/GetGenericKinds?subdivisionName=').then(function (response) {
         return response.Data;
       });
     };
