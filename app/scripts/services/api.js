@@ -60,6 +60,26 @@ angular.module('directoryApp')
     };
 
     /**
+     * Get faculty information
+     */
+    this.getFaculty = function (name) {
+      var url = 'Directory/GetFaculty?name=' + name + '&light=false';
+      return Campus.execute('GET', url).then(function (response) {
+        return response.Data;
+      });
+    };
+
+    /**
+     * Get faculty information
+     */
+    this.getCathedra = function (name) {
+      var url = 'Directory/GetCathedra?name=' + name + '&light=false';
+      return Campus.execute('GET', url).then(function (response) {
+        return response.Data;
+      });
+    };
+
+    /**
      *
      */
     this.getGenerycTypes = function () {

@@ -62,6 +62,11 @@ angular
         controller: 'UniversalCtrl',
         controllerAs: 'universal'
       })
+      .when('/:faculty/:cathedra/:id?', {
+        templateUrl: 'views/cathedra.html',
+        controller: 'CathedraCtrl',
+        controllerAs: 'cathedra'
+      })
       .when('/:faculty', {
         templateUrl: 'views/faculty.html',
         controller: 'FacultyCtrl',
