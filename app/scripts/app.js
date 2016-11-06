@@ -65,12 +65,12 @@ angular
       .when('/:faculty/:cathedra/:speciality/:discipline/:creditModule/:kind', {
         templateUrl: 'views/kind.html',
         controller: 'KindCtrl',
-        controllerAs: 'discipline'
+        controllerAs: 'kind'
       })
       .when('/:faculty/:cathedra/:speciality/:discipline/:creditModule', {
         templateUrl: 'views/creditModule.html',
         controller: 'CreditModuleCtrl',
-        controllerAs: 'discipline'
+        controllerAs: 'creditModule'
       })
       .when('/:faculty/:cathedra/:speciality/:discipline', {
         templateUrl: 'views/discipline.html',

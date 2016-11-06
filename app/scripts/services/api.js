@@ -100,6 +100,16 @@ angular.module('directoryApp')
     };
 
     /**
+     * Get credit module information
+     */
+    this.getCreditModule = function (id, subdivision) {
+      var url = 'Directory/GetCreditModule?id=' + id + '&subdivision=' + subdivision + '&light=false';
+      return Campus.execute('GET', url).then(function (response) {
+        return response.Data;
+      });
+    };
+
+    /**
      *
      */
     this.getGenerycTypes = function () {

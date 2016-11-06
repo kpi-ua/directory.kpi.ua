@@ -17,8 +17,8 @@ angular.module('directoryApp')
     $scope.cathedraName = '';
     $scope.facultyTitle = '';
     $scope.facultyName = '';
-    $scope.specialityTitle = {};
-    $scope.specialityCode = {};
+    $scope.specialityTitle = '';
+    $scope.specialityCode = '';
 
     reload();
 
@@ -29,6 +29,7 @@ angular.module('directoryApp')
       $scope.facultyName = !!$route.current.params.faculty ? $route.current.params.faculty : '';
       $scope.cathedraName = !!$route.current.params.cathedra ? $route.current.params.cathedra : '';
 
+      $scope.specialityUrl = '/#/' + $scope.facultyName + '/' + $scope.cathedraName + '/' + $scope.specialityCode;
       $scope.cathedraUrl = '/#/' + $scope.facultyName + '/' + $scope.cathedraName;
       $scope.facultyUrl = '/#/' + $scope.facultyName;
 

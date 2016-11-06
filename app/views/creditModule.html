@@ -13,6 +13,17 @@
 
 <div class="col-md-12" ng-if="!loading">
 
+  <h1>{{creditModule.title}}</h1>
 
+  <section ng-bind-html="creditModule.description">
+  </section>
+
+  <h2>Види ЕІР</h2>
+
+  <ul class="list">
+    <li ng-repeat="kind in kinds">
+      <a href="{{kind.url}}">{{kind.title}}</a> {{kind.description}}
+    </li>
+  </ul>
 
 </div>
