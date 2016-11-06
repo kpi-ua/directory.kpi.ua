@@ -1,0 +1,42 @@
+<breadcrumbs ng-if="!loading">
+  <b>{{ faculty.title }}</b>
+</breadcrumbs>
+
+<div class="col-md-12" ng-if="loading">
+  <br />
+  <progress-bar ng-if="loading"></progress-bar>
+</div>
+
+<div class="col-md-12">
+
+  <h1>{{faculty.title}}</h1>
+  <div class="table-responsive">
+    <table class="table">
+      <tr>
+        <td class="subdivision-logo">
+          <img alt="{{faculty.title}}" class="img-responsive" src="{{faculty.logo}}"/>
+        </td>
+        <td>
+          <div ng-bind-html="faculty.content"></div>
+          <div class="clear"></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <br/>
+  <strong ng-if="!!faculty.url">Сторінка факультету:</strong> <a href="{{faculty.url}}">{{faculty.url}}</a>
+
+  <h2>Кафедри факультету</h2>
+
+  <ul class="list">
+    <li ng-repeat="cathedra in cathedras"><a href="{{cathedra.url}}">{{cathedra.title}}</a> {{ cathedra.description }}
+    </li>
+  </ul>
+
+  <h2>ЕІР Факультету/Інституту</h2>
+  Ресурси, що ґрунтуються на ідеях і знаннях, нагромаджених у результаті науково-технічної діяльності для співробітників
+  та студентів Факультету/Інституту.<br/>
+  <a href="/generic/faculty/{{faculty.name}}">Переглянути</a>
+</div>

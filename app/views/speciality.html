@@ -1,0 +1,25 @@
+<breadcrumbs ng-if="!loading">
+  <a ng-href="{{ facultyUrl }}">{{ facultyTitle }}</a> >
+  <a ng-href="{{ cathedraUrl }}">{{ cathedraTitle }}</a> >
+  <b>{{ speciality.title }}</b>
+</breadcrumbs>
+
+<div class="col-md-12" ng-if="loading">
+  <br/>
+  <progress-bar ng-if="loading"></progress-bar>
+</div>
+
+<div class="col-md-12" ng-if="!loading">
+  <h1>{{speciality.code}} - {{speciality.title}}</h1>
+
+  <section ng-bind-html="speciality.description">
+  </section>
+
+  <h2>Дисциплiни</h2>
+
+  <ul class="list">
+    <li ng-repeat="discipline in disciplines">
+      <a href="{{discipline.url}}">{{discipline.title}}</a> {{discipline.description}}
+    </li>
+  </ul>
+</div>
