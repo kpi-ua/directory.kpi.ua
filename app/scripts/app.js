@@ -62,6 +62,21 @@ angular
         controller: 'UniversalCtrl',
         controllerAs: 'universal'
       })
+      .when('/:faculty/:cathedra/:speciality/:discipline/:creditModule/:kind', {
+        templateUrl: 'views/kind.html',
+        controller: 'KindCtrl',
+        controllerAs: 'discipline'
+      })
+      .when('/:faculty/:cathedra/:speciality/:discipline/:creditModule', {
+        templateUrl: 'views/creditModule.html',
+        controller: 'CreditModuleCtrl',
+        controllerAs: 'discipline'
+      })
+      .when('/:faculty/:cathedra/:speciality/:discipline', {
+        templateUrl: 'views/discipline.html',
+        controller: 'DisciplineCtrl',
+        controllerAs: 'discipline'
+      })
       .when('/:faculty/:cathedra/:speciality', {
         templateUrl: 'views/speciality.html',
         controller: 'SpecialityCtrl',
@@ -82,7 +97,6 @@ angular
         controller: 'AuthorListCtrl',
         controllerAs: 'authorList'
       })
-
       .otherwise({
         redirectTo: '/'
       });
