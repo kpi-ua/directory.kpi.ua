@@ -142,9 +142,9 @@ angular.module('directoryApp')
     /**
      *
      */
-    this.getGenericKinds = function (kindId) {
-      var name = 'University';
-      var url = 'Directory/GetGenericCurriculumList?kindId={kindId}&subdivision={subdivision}&page={page}&size={size}' + name;
+    this.getGenericCurriculums = function (kindId, subdivision, page) {
+      var size = 25; //Default page size
+      var url = 'Directory/GetGenericCurriculumList?kindId=' + kindId + '&subdivision=' + subdivision + '&page=' + page + '&size=' + size;
       return campus.execute('GET', url).then(function (response) {
         return response.Data;
       });

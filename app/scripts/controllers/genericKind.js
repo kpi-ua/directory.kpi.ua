@@ -8,7 +8,7 @@
  * Controller of the directoryApp
  */
 angular.module('directoryApp')
-  .controller('GenericKindCtrl', function ($scope, api) {
+  .controller('GenericKindCtrl', function ($scope, $route, $location, api) {
 
 
     $scope.kind = {};
@@ -23,23 +23,25 @@ angular.module('directoryApp')
       var subdivision = !!$route.current.params.subdivision ? $route.current.params.subdivision : '';
       var page = !!$route.current.params.page ? $route.current.params.page : '';
 
-      api.getGenericKinds(kindId, subdivision, page).then(function (kind) {
-
+      api.getKind(kindId, null).then(function (kind) {
         $scope.kind =
         {
           title: kind.Title,
           name: kind.Name,
           description: kind.Description,
         };
+      });
 
-        $scope.eirs = kind.Items.map(function (o) {
+      api.getGenericCurriculums(kindId, subdivision, page).then(function (items) {
+
+        $scope.curriculum = items.map(function (o) {
           return {
             url: '/curriculum/' + o.IrId,
             title: o.Title,
             description: o.Description,
             irName: o.IrName,
             annotation: o.Annotation,
-            stamp: o.Stamp,
+            stamp: o.Stamp
           };
 
         });
@@ -50,6 +52,3 @@ angular.module('directoryApp')
 
 
   });
-/**
- * Created by andrew on 11/4/16.
- */
