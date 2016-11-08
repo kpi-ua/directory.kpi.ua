@@ -47,15 +47,15 @@ angular
         controller: 'AuthorCtrl',
         controllerAs: 'author'
       })
-      .when('/generic', {
+      .when('/generic/:subdivisionType/:subdivision?', {
         templateUrl: 'views/generic.html',
         controller: 'GenericCtrl',
         controllerAs: 'generic'
       })
-      .when('/generic/university', {
-        templateUrl: 'views/genericUniversity.html',
-        controller: 'GenericUniversityCtrl',
-        controllerAs: 'genericUniversity'
+      .when('/generic/:subdivision/:kind/:page?', {
+        templateUrl: 'views/generic-kind.html',
+        controller: 'GenericKindCtrl',
+        controllerAs: 'generic'
       })
       .when('/universal', {
         templateUrl: 'views/universal.html',
@@ -101,8 +101,8 @@ angular
         redirectTo: '/'
       });
 
-      $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 
-      //Campus.setApiEndpoint('https://api.campus.kpi.ua/');
+    //Campus.setApiEndpoint('https://api.campus.kpi.ua/');
 
   });

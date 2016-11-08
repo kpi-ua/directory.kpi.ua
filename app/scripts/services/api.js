@@ -139,4 +139,15 @@ angular.module('directoryApp')
       });
     };
 
+    /**
+     *
+     */
+    this.getGenericKinds = function (kindId) {
+      var name = 'University';
+      var url = 'Directory/GetGenericCurriculumList?kindId={kindId}&subdivision={subdivision}&page={page}&size={size}' + name;
+      return campus.execute('GET', url).then(function (response) {
+        return response.Data;
+      });
+    };
+
   });
