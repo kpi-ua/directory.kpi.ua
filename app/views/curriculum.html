@@ -15,11 +15,18 @@
     <table class="table table-condensed table-striped table-hover">
       <tr>
         <td><strong>Анотація</strong></td>
-        <td>{{curriculum.Annotation}}</td>
+        <td>
+          <pre class="word-wrap" ng-if="!!curriculum.Annotation">
+            {{curriculum.Annotation}}
+          </pre>
+        </td>
       </tr>
       <tr>
         <td><strong>Опис</strong></td>
-        <td>{{curriculum.IrDescription}}</td>
+        <td>
+          <pre class="word-wrap" ng-if="!!curriculum.IrDescription">
+            {{curriculum.IrDescription}}
+          </pre>
       </tr>
       <tr>
         <td><strong>Бiблiографiчна</strong> назва</td>

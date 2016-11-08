@@ -28,24 +28,22 @@
   <meta name="author" content="@ViewBag.Author">
   <meta charset="UTF-8">
 
-  <link rel="stylesheet" type="text/css"
-        href="http://fonts.googleapis.com/css?family=Scada:400italic,700italic,400,700&subset=latin,cyrillic"/>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Scada:400italic,700italic,400,700&subset=latin,cyrillic"/>
   <link rel="stylesheet" type="text/css" href="/styles/main.css"/>
 
 </head>
 
 <body ng-app="directoryApp">
 <!--[if lte IE 8]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-  your browser</a> to improve your experience.</p>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <nav class="main-menu">
   <a href="http://ecampus.kpi.ua/">Електронний кампус</a>
-  <a href="/">Інститути та факультети НТУУ "КПІ"</a>
-  <a href="/generic/university">Загальноуніверситетські інформаційні ресурси</a>
-  <a href="/author/list">Автори інформаційних ресурсів</a> |
-  <a class="search-button" href="#">Пошук</a>
+  <a href="/#/">Інститути та факультети НТУУ "КПІ"</a>
+  <a href="/#//generic/university">Загальноуніверситетські інформаційні ресурси</a>
+  <a href="/#//author/list">Автори інформаційних ресурсів</a> |
+  <a class="search-button" href="/#/search">Пошук</a>
 
   <div class="search" style="display: none;">
     <script>
@@ -68,7 +66,7 @@
 
   <header class="row">
     <div class="logo col-md-1">
-      <a href="/#/"><img alt="НТУУ КПІ" src="/Images/logo.png"/></a>
+      <a href="/#/"><img alt="НТУУ КПІ" src="/images/logo.png"/></a>
     </div>
     <div class="col-md-11">
       <h2>Національний технічний університет України &quot;Київський політехнічний інститут імені Ігоря Сікорського&quot;</h2>
@@ -76,21 +74,8 @@
     </div>
   </header>
 
-
-  <section class="row">
-    <!--@RenderSection("book", false)-->
-  </section>
-
   <section class="row content">
-    <!--@if (showBreadcrumb)-->
-    <!--{-->
-    <!--<nav class="breadcrumb">-->
-      <!--@Html.Raw(ViewBag.Breadcrumb)-->
-    <!--</nav>-->
-    <!--}-->
-
     <div ng-view=""></div>
-
   </section>
 </div>
 
