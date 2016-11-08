@@ -51,8 +51,6 @@ angular.module('directoryApp')
         });
 
         $scope.loading = false;
-        $scope.$apply();
-
       });
     }
 

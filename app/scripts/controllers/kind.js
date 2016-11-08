@@ -44,12 +44,9 @@ angular.module('directoryApp')
       api.getCathedra($scope.cathedraName).then(function (cathedra) {
         $scope.cathedraTitle = cathedra.Title;
         $scope.facultyTitle = cathedra.FacultyTitle;
-
-        $scope.$apply();
       });
 
       api.getSpeciality($scope.specialityCode).then(function (speciality) {
-        debugger;
         $scope.specialityTitle = speciality.Title;
         $scope.specialityCode = speciality.Code;
       });
@@ -73,7 +70,6 @@ angular.module('directoryApp')
 
 
         $scope.eirs = kind.Items.map(function (o) {
-          debugger;
           return {
             url: '/curriculum/' + o.IrId,
             title: o.Title,
@@ -86,8 +82,6 @@ angular.module('directoryApp')
         });
 
         $scope.loading = false;
-        $scope.$apply();
-
       });
     }
 

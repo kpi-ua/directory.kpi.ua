@@ -36,8 +36,6 @@ angular.module('directoryApp')
       api.getCathedra($scope.cathedraName).then(function (cathedra) {
         $scope.cathedraTitle = cathedra.Title;
         $scope.facultyTitle = cathedra.FacultyTitle;
-
-        $scope.$apply();
       });
 
       api.getSpeciality($scope.specialityCode).then(function (speciality) {
@@ -65,8 +63,6 @@ angular.module('directoryApp')
         });
 
         $scope.loading = false;
-        $scope.$apply();
-
       });
     }
 
