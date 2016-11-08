@@ -12,7 +12,8 @@ angular.module('directoryApp')
 
     $scope.curriculums = [];
     $scope.kind = {};
-
+    $scope.kindId = null;
+    $scope.subdivision = '';
     $scope.pagination = {};
     $scope.loading = true;
 
@@ -20,20 +21,28 @@ angular.module('directoryApp')
 
     function reload() {
 
-      var kindId = !!$route.current.params.kind ? $route.current.params.kind : '';
-      var subdivision = !!$route.current.params.subdivision ? $route.current.params.subdivision : '';
-      var page = !!$route.current.params.page ? $route.current.params.page : '';
+      $scope.kindId = !!$route.current.params.kind ? $route.current.params.kind : '';
+      $scope.subdivision = !!$route.current.params.subdivision ? $route.current.params.subdivision : '';
+      $scope.page = !!$route.current.params.page ? $route.current.params.page : '';
 
-      api.getKind(kindId, null).then(function (kind) {
+      api.getKind($scope.kindId, null).then(function (kind) {
         $scope.kind =
         {
           title: kind.Title,
           name: kind.Name,
-          description: kind.Description,
+          description: kind.Description
         };
       });
 
-      api.getGenericCurriculums(kindId, subdivision, page).then(function (result) {
+      var page = !!$route.current.params.page ? $route.current.params.page : 1;
+
+      load(page);
+    }
+
+    function load(page) {
+      $scope.loading = true;
+
+      api.getGenericCurriculums($scope.kindId, $scope.subdivision, page).then(function (result) {
 
         $scope.pagination = result.pagination;
 
@@ -52,6 +61,15 @@ angular.module('directoryApp')
         $scope.loading = false;
       });
     }
+
+    $scope.$watch('pagination.currentPage', function (newValue, oldValue) {
+
+      if (newValue != oldValue && !!newValue && !!oldValue) {
+        $location.url = '/generic/' + $scope.subdivision + '/' + $scope.kindId + '/' + $scope.pagination.currentPage;
+        $scope.pagination.currentPage = newValue;
+        load($scope.pagination.currentPage);
+      }
+    });
 
 
   });

@@ -52,7 +52,6 @@ angular
         controllerAs: 'author',
         caseInsensitiveMatch: true
       })
-    //http://localhost:9000/Generic/University/1/1
       .when('/generic/:subdivisionType/:subdivision?', {
         templateUrl: 'views/generic.html',
         controller: 'GenericCtrl',
