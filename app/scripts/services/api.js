@@ -146,7 +146,20 @@ angular.module('directoryApp')
       var size = 25; //Default page size
       var url = 'Directory/GetGenericCurriculumList?kindId=' + kindId + '&subdivision=' + subdivision + '&page=' + page + '&size=' + size;
       return campus.execute('GET', url).then(function (response) {
-        return response.Data;
+
+        var pagination = {
+          currentPage: response.Paging.PageNumber,
+          pageCount: 10,
+          pageSize: response.Paging.PageSize,
+          totalItemsCount: response.Paging.TotalItemCount
+        };
+
+        var items = response.Data;
+
+        return {
+          items: items,
+          pagination: pagination
+        };
       });
     };
 

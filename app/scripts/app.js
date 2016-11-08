@@ -25,77 +25,93 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        controllerAs: 'main',
+        caseInsensitiveMatch: true
       })
       .when('/search', {
         templateUrl: 'views/search.html',
         controller: 'SearchCtrl',
-        controllerAs: 'search'
+        controllerAs: 'search',
+        caseInsensitiveMatch: true
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
+        controllerAs: 'about',
+        caseInsensitiveMatch: true
       })
       .when('/curriculum/:id', {
         templateUrl: 'views/curriculum.html',
         controller: 'CurriculumCtrl',
-        controllerAs: 'curriculum'
+        controllerAs: 'curriculum',
+        caseInsensitiveMatch: true
       })
       .when('/author/?uid', {
         templateUrl: 'views/author.html',
         controller: 'AuthorCtrl',
-        controllerAs: 'author'
+        controllerAs: 'author',
+        caseInsensitiveMatch: true
       })
+    //http://localhost:9000/Generic/University/1/1
       .when('/generic/:subdivisionType/:subdivision?', {
         templateUrl: 'views/generic.html',
         controller: 'GenericCtrl',
-        controllerAs: 'generic'
+        controllerAs: 'generic',
+        caseInsensitiveMatch: true
       })
       .when('/generic/:subdivision/:kind/:page?', {
         templateUrl: 'views/generic-kind.html',
         controller: 'GenericKindCtrl',
-        controllerAs: 'generic'
+        controllerAs: 'generic',
+        caseInsensitiveMatch: true
       })
       .when('/universal', {
         templateUrl: 'views/universal.html',
         controller: 'UniversalCtrl',
-        controllerAs: 'universal'
+        controllerAs: 'universal',
+        caseInsensitiveMatch: true
       })
       .when('/:faculty/:cathedra/:speciality/:discipline/:creditModule/:kind', {
         templateUrl: 'views/kind.html',
         controller: 'KindCtrl',
-        controllerAs: 'kind'
+        controllerAs: 'kind',
+        caseInsensitiveMatch: true
       })
       .when('/:faculty/:cathedra/:speciality/:discipline/:creditModule', {
         templateUrl: 'views/creditModule.html',
         controller: 'CreditModuleCtrl',
-        controllerAs: 'creditModule'
+        controllerAs: 'creditModule',
+        caseInsensitiveMatch: true
       })
       .when('/:faculty/:cathedra/:speciality/:discipline', {
         templateUrl: 'views/discipline.html',
         controller: 'DisciplineCtrl',
-        controllerAs: 'discipline'
+        controllerAs: 'discipline',
+        caseInsensitiveMatch: true
       })
       .when('/:faculty/:cathedra/:speciality', {
         templateUrl: 'views/speciality.html',
         controller: 'SpecialityCtrl',
-        controllerAs: 'speciality'
+        controllerAs: 'speciality',
+        caseInsensitiveMatch: true
       })
       .when('/:faculty/:cathedra', {
         templateUrl: 'views/cathedra.html',
         controller: 'CathedraCtrl',
-        controllerAs: 'cathedra'
+        controllerAs: 'cathedra',
+        caseInsensitiveMatch: true
       })
       .when('/:faculty', {
         templateUrl: 'views/faculty.html',
         controller: 'FacultyCtrl',
-        controllerAs: 'faculty'
+        controllerAs: 'faculty',
+        caseInsensitiveMatch: true
       })
       .when('/author/list/:page?', {
         templateUrl: 'views/authorList.html',
         controller: 'AuthorListCtrl',
-        controllerAs: 'authorList'
+        controllerAs: 'authorList',
+        caseInsensitiveMatch: true
       })
       .otherwise({
         redirectTo: '/'

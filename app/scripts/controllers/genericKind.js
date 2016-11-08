@@ -10,9 +10,10 @@
 angular.module('directoryApp')
   .controller('GenericKindCtrl', function ($scope, $route, $location, api) {
 
-
+    $scope.curriculums = [];
     $scope.kind = {};
 
+    $scope.pagination = {};
     $scope.loading = true;
 
     reload();
@@ -32,9 +33,11 @@ angular.module('directoryApp')
         };
       });
 
-      api.getGenericCurriculums(kindId, subdivision, page).then(function (items) {
+      api.getGenericCurriculums(kindId, subdivision, page).then(function (result) {
 
-        $scope.curriculum = items.map(function (o) {
+        $scope.pagination = result.pagination;
+
+        $scope.curriculums = result.items.map(function (o) {
           return {
             url: '/curriculum/' + o.IrId,
             title: o.Title,
