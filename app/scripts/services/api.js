@@ -142,6 +142,26 @@ angular.module('directoryApp')
     /**
      *
      */
+    this.getCurriculumLocalization = function (id, language) {
+      var url = 'Directory/getCurriculumLocalization?id=' + id + '&language=' + language;
+      return campus.execute('GET', url).then(function (response) {
+
+        if (!!response && !!response.Data) {
+          var o = response.Data;
+          return {
+            title: o.Title,
+            annotation: o.Annotation,
+            authors: o.Authors
+          };
+        }
+
+        return null;
+      });
+    };
+
+    /**
+     *
+     */
     this.getGenericCurriculums = function (kindId, subdivision, page) {
       var size = 25; //Default page size
       var url = 'Directory/GetGenericCurriculumList?kindId=' + kindId + '&subdivision=' + subdivision + '&page=' + page + '&size=' + size;
@@ -163,9 +183,28 @@ angular.module('directoryApp')
       });
     };
 
-    this.getCurriculumFiles = function (universalIdentifier) {
+    this.getCurriculumLanguages = function (id) {
+      var url = 'Directory/GetCurriculumLocalizations?id=' + id;
 
-      var url = 'Ir/' + universalIdentifier + '/Files';
+      return campus.execute('GET', url).then(function (response) {
+
+        if (!!response) {
+          return response.Data.map(function (o) {
+            return {
+              id: o.Id,
+              code: o.Code,
+              name: o.Name
+            };
+          })
+        }
+        return [];
+      });
+
+    };
+
+    this.getCurriculumFiles = function (id) {
+
+      var url = 'Ir/' + id + '/Files';
 
       return campus.execute('GET', url).then(function (response) {
 

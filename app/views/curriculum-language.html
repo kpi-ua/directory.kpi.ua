@@ -1,1 +1,28 @@
-<p>This is the curriculum-language view.</p>
+<breadcrumbs ng-if="!loading">
+  <span>Електроний матеріал</span> > <b>{{curriculum.title}} ({{language}})</b>
+</breadcrumbs>
+
+<div class="col-md-12" ng-if="loading">
+  <br/>
+  <progress-bar ng-if="loading"></progress-bar>
+</div>
+
+<div class="col-md-12" ng-if="!loading">
+
+  <h1>{{curriculum.title}}</h1>
+
+  <table class="table table-condensed table-responsive table-striped table-hover">
+    <tr>
+      <td>Annotation</td>
+      <td>{{curriculum.annotation}}</td>
+    </tr>
+    <tr>
+      <td>Authors</td>
+      <td>{{curriculum.authors}}</td>
+    </tr>
+  </table>
+  <br />
+
+  <a href="{{curriculumUrl}}" class="btn btn-default">Повернутися до повного опису</a>
+
+</div>

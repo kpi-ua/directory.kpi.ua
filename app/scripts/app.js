@@ -40,16 +40,16 @@ angular
         controllerAs: 'about',
         caseInsensitiveMatch: true
       })
+      .when('/curriculum/:id/:language', {
+        templateUrl: 'views/curriculum-language.html',
+        controller: 'CurriculumLanguageCtrl',
+        controllerAs: 'curriculumLanguage',
+        caseInsensitiveMatch: true
+      })
       .when('/curriculum/:id', {
         templateUrl: 'views/curriculum.html',
         controller: 'CurriculumCtrl',
         controllerAs: 'curriculum',
-        caseInsensitiveMatch: true
-      })
-      .when('//curriculum/:id/:language', {
-        templateUrl: 'views/curriculum-language.html',
-        controller: 'CurriculumLanguageCtrl',
-        controllerAs: 'curriculumLanguage',
         caseInsensitiveMatch: true
       })
       .when('/author/?uid', {

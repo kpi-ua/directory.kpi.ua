@@ -29,7 +29,16 @@ angular.module('directoryApp')
 
       api.getCurriculumFiles(id).then(function (response) {
         $scope.files = response;
-      })
+      });
+
+      api.getCurriculumLanguages(id).then(function (response) {
+        $scope.languages = response.map(function (o) {
+          return {
+            code: o.code,
+            url: '/#/curriculum/' + id + '/' + o.name
+          }
+        });
+      });
     }
 
   });

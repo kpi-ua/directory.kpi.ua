@@ -27,8 +27,6 @@ angular.module('directoryApp')
       var subdivision = !!$route.current.params.subdivision ? $route.current.params.subdivision : 'university';
 
 
-      debugger;
-
       if (subdivisionType == 'university') {
         $scope.title = 'Загальноуніверситетські ЕІР';
         $scope.description = 'Ресурси, що ґрунтується на ідеях і знаннях, нагромаджених у результаті науково-технічної діяльності для співробітників та студентів університету.';
