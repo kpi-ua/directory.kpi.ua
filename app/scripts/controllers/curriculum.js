@@ -25,6 +25,10 @@ angular.module('directoryApp')
 
         $scope.curriculum = response;
         $scope.loading = false;
+      });
+
+      api.getCurriculumFiles(id).then(function (response) {
+        $scope.files = response;
       })
     }
 

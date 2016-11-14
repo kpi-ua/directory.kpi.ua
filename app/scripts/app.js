@@ -46,6 +46,12 @@ angular
         controllerAs: 'curriculum',
         caseInsensitiveMatch: true
       })
+      .when('//curriculum/:id/:language', {
+        templateUrl: 'views/curriculum-language.html',
+        controller: 'CurriculumLanguageCtrl',
+        controllerAs: 'curriculumLanguage',
+        caseInsensitiveMatch: true
+      })
       .when('/author/?uid', {
         templateUrl: 'views/author.html',
         controller: 'AuthorCtrl',
@@ -117,7 +123,5 @@ angular
       });
 
     $locationProvider.html5Mode(true);
-
-    //Campus.setApiEndpoint('https://api.campus.kpi.ua/');
 
   });

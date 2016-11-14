@@ -163,4 +163,26 @@ angular.module('directoryApp')
       });
     };
 
+    this.getCurriculumFiles = function (universalIdentifier) {
+
+      var url = 'Ir/' + universalIdentifier + '/Files';
+
+      return campus.execute('GET', url).then(function (response) {
+
+        if (!!response) {
+
+          var result = [];
+
+          response.forEach(function (f) {
+            result.push({downloadUrl: f.storageFileUrl, title: f.name});
+          });
+
+          return result;
+        }
+
+        return [];
+      });
+    };
+
+
   });

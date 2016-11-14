@@ -68,51 +68,53 @@
     <h2>Файли та матеріали</h2>
     <div class="table-responsive">
       <table class="table table-condensed table-striped table-hover">
-        @foreach (Core.Link file in Model.Files)
-        {
-        <tr>
+        <tbody>
+        <tr ng-repeat="file in files">
           <td>
             <strong>
-              @file.Text
+              {{file.title}}
             </strong>
           </td>
           <td>
-            <a target="_download" class="btn btn-default" href="@file.Url"><i
-              class="glyphicon glyphicon-floppy-save"></i>
-              Завантажити</a>
+            <a target="_download" class="btn btn-default" href="{{file.downloadUrl}}"><i
+              class="glyphicon glyphicon-floppy-save"></i> Завантажити</a>
           </td>
         </tr>
-        }
+        </tbody>
       </table>
     </div>
+
   </div>
 
   <div ng-if="!!languages && languages.length > 0">
 
     <h2>Інші мови</h2>
     <ul class="pagination">
-      @foreach (var language in Model.Languages)
-      {
-      var url = String.Format("/curriculum/{0}/{1}", Model.Curriculum.IrId, language.Name);
-      <li><a href="@url">@language.Code</a></li>
-      }
+      <li ng-repeat="language in languages"><a href="{{language.url}}">{{language.code}}</a></li>
     </ul>
 
   </div>
 
-  <h2>Читається на таких спеціальностях</h2>
-  <ul class="list">
-    <li ng-repeat="speciality in specialities">
-      <a href="{{speciality.url}}">{{speciality.code}} - {{speciality.title}}</a>
-      {{speciality.description}}
-    </li>
-  </ul>
+  <div ng-if="false">
 
-  <h2>Читається на таких кафедрах</h2>
-  <ul class="list">
-    <li ng-repeat="cathedra in cathedras"><a href="{{cathedra.url}}">{{cathedra.title}}</a> {{ cathedra.description }}
-    </li>
-  </ul>
+    <h2>Читається на таких спеціальностях</h2>
+    <ul class="list">
+      <li ng-repeat="speciality in specialities">
+        <a href="{{speciality.url}}">{{speciality.code}} - {{speciality.title}}</a>
+        {{speciality.description}}
+      </li>
+    </ul>
 
+  </div>
+
+  <div ng-if="false">
+
+    <h2>Читається на таких кафедрах</h2>
+    <ul class="list">
+      <li ng-repeat="cathedra in cathedras"><a href="{{cathedra.url}}">{{cathedra.title}}</a> {{ cathedra.description }}
+      </li>
+    </ul>
+
+  </div>
 
 </div>
