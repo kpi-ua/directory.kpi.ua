@@ -9,7 +9,6 @@
  */
 angular.module('directoryApp')
   .controller('AuthorCtrl', function () {
-<<<<<<< HEAD
 
     $scope.eirs = [];
     $scope.author = {};
@@ -33,11 +32,4 @@ angular.module('directoryApp')
         $scope.loading = false;
       });
     }
-=======
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
->>>>>>> kpi-ua/master
   });
