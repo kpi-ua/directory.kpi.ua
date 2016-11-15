@@ -232,5 +232,12 @@ angular.module('directoryApp')
       });
     };
 
+    this.getAuthor = function (uid) {
+      var url = 'Directory/GetAuthor?light=false&id=' + uid;
+
+      return campus.execute('GET', url).then(function (response) {
+        return response.Data;
+      });
+    };
 
   });
