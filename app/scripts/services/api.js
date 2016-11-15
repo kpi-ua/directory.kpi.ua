@@ -139,6 +139,7 @@ angular.module('directoryApp')
       });
     };
 
+<<<<<<< HEAD
     /**
      *
      */
@@ -233,4 +234,6 @@ angular.module('directoryApp')
     };
 
 
+=======
+>>>>>>> kpi-ua/master
   });

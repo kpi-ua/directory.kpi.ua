@@ -25,6 +25,7 @@ angular.module('directoryApp')
 
         $scope.curriculum = response;
         $scope.loading = false;
+<<<<<<< HEAD
       });
 
       api.getCurriculumFiles(id).then(function (response) {
@@ -39,6 +40,9 @@ angular.module('directoryApp')
           }
         });
       });
+=======
+      })
+>>>>>>> kpi-ua/master
     }
 
   });

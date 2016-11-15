@@ -29,6 +29,11 @@ angular.module('directoryApp')
         });
 
         $scope.loading = false;
+<<<<<<< HEAD
+=======
+        $scope.$apply();
+
+>>>>>>> kpi-ua/master
       });
 
     }

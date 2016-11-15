@@ -40,7 +40,11 @@ angular.module('directoryApp')
           var delimiter = (!!o.AcademicDegree || !!o.Status) ? '–' : null;
 
           return {
+<<<<<<< HEAD
             url: '/#/author/' + o.UserIdentifier,
+=======
+            url: '/author/' + o.UserIdentifier,
+>>>>>>> kpi-ua/master
             name: o.FullName,
             description: toString(delimiter) + ' ' + toString(o.AcademicDegree) + ' ' + toString(o.Status)
           };
@@ -48,6 +52,11 @@ angular.module('directoryApp')
         });
 
         $scope.loading = false;
+<<<<<<< HEAD
+=======
+        $scope.$apply();
+
+>>>>>>> kpi-ua/master
       });
     }
 
