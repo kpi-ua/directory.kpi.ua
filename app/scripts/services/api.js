@@ -167,14 +167,23 @@ angular.module('directoryApp')
       var url = 'Directory/GetGenericCurriculumList?kindId=' + kindId + '&subdivision=' + subdivision + '&page=' + page + '&size=' + size;
       return campus.execute('GET', url).then(function (response) {
 
+        debugger;
+
         var pagination = {
           currentPage: response.Paging.PageNumber,
-          pageCount: 10,
+          pageCount: response.Paging.PageCount,
           pageSize: response.Paging.PageSize,
           totalItemsCount: response.Paging.TotalItemCount
         };
 
+        // debugger;
+
         var items = response.Data;
+
+        if (pagination.currentPage == 1 && items.length < pagination.pageSize) {
+          pagination.pageCount = 1;
+          pagination.totalItemsCount = items.length;
+        }
 
         return {
           items: items,

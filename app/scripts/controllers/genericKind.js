@@ -27,11 +27,11 @@ angular.module('directoryApp')
 
       api.getKind($scope.kindId, null).then(function (kind) {
         $scope.kind =
-        {
-          title: kind.Title,
-          name: kind.Name,
-          description: kind.Description
-        };
+          {
+            title: kind.Title,
+            name: kind.Name,
+            description: kind.Description
+          };
       });
 
       var page = !!$route.current.params.page ? $route.current.params.page : 1;
@@ -45,6 +45,8 @@ angular.module('directoryApp')
       api.getGenericCurriculums($scope.kindId, $scope.subdivision, page).then(function (result) {
 
         $scope.pagination = result.pagination;
+
+        debugger;
 
         $scope.curriculums = result.items.map(function (o) {
           return {

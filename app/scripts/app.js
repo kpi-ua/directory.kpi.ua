@@ -40,6 +40,18 @@ angular
         controllerAs: 'about',
         caseInsensitiveMatch: true
       })
+      .when('/author/list/:page?', {
+        templateUrl: 'views/authorList.html',
+        controller: 'AuthorListCtrl',
+        controllerAs: 'authorList',
+        caseInsensitiveMatch: true
+      })
+      .when('/author/:uid', {
+        templateUrl: 'views/author.html',
+        controller: 'AuthorCtrl',
+        controllerAs: 'author',
+        caseInsensitiveMatch: true
+      })
       .when('/curriculum/:id/:language', {
         templateUrl: 'views/curriculum-language.html',
         controller: 'CurriculumLanguageCtrl',
@@ -52,12 +64,7 @@ angular
         controllerAs: 'curriculum',
         caseInsensitiveMatch: true
       })
-      .when('/author/?uid', {
-        templateUrl: 'views/author.html',
-        controller: 'AuthorCtrl',
-        controllerAs: 'author',
-        caseInsensitiveMatch: true
-      })
+
       .when('/generic/:subdivisionType/:subdivision?', {
         templateUrl: 'views/generic.html',
         controller: 'GenericCtrl',
@@ -110,12 +117,6 @@ angular
         templateUrl: 'views/faculty.html',
         controller: 'FacultyCtrl',
         controllerAs: 'faculty',
-        caseInsensitiveMatch: true
-      })
-      .when('/author/list/:page?', {
-        templateUrl: 'views/authorList.html',
-        controller: 'AuthorListCtrl',
-        controllerAs: 'authorList',
         caseInsensitiveMatch: true
       })
       .otherwise({
