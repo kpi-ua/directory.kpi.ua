@@ -11,6 +11,10 @@ angular.module('directoryApp')
   .service('campus', function ($http) {
 
     this.ApiEndpoint = 'https://api.campus.kpi.ua/';
+<<<<<<< HEAD
+    this.StorageEndpoint = 'http://storage.campus.kpi.ua/';
+=======
+>>>>>>> kpi-ua/master
     //this.ApiEndpoint = 'http://api-campus-kpi-ua.azurewebsites.net/';
 
     /**
@@ -42,6 +46,13 @@ angular.module('directoryApp')
       return this.ApiEndpoint;
     };
 
+<<<<<<< HEAD
+    this.getStorageEndpoint = function(){
+      return this.StorageEndpoint;
+    };
+
+=======
+>>>>>>> kpi-ua/master
     /**
      * Save current user
      */

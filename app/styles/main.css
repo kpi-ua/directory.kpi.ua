@@ -1,13 +1,22 @@
 ﻿html, body {
+<<<<<<< HEAD
+  font-family: 'Scada', sans-serif;
+  background-color: #F7F7F7;
+=======
     font-family: 'Scada', sans-serif;
     background-color: #F7F7F7;
+>>>>>>> kpi-ua/master
 }
 
 h1 {
 }
 
 h2, .h2 {
+<<<<<<< HEAD
+  font-size: 16pt;
+=======
     font-size: 16pt;
+>>>>>>> kpi-ua/master
 }
 
 h3 {
@@ -16,6 +25,69 @@ h3 {
 a {
 }
 
+<<<<<<< HEAD
+a:hover {
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.list a {
+  font-weight: bold;
+}
+
+.list a:hover {
+}
+
+.logo {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.logo img {
+  width: 68px;
+}
+
+.subdivision-logo {
+  vertical-align: top;
+  padding-right: 20px;
+}
+
+.subdivision-logo img {
+  max-width: 120px;
+}
+
+.title {
+  display: inline-block;
+  margin-top: 19px;
+  min-height: 70px;
+  padding: 5px;
+}
+
+.title:hover {
+  text-decoration: none;
+}
+
+.title h1, .title h2 {
+  color: #000;
+  margin: 0;
+}
+
+.title h1 {
+  font-size: 20pt;
+}
+
+.title h2 {
+  font-size: 16pt;
+}
+=======
     a:hover {
     }
 
@@ -80,11 +152,85 @@ a {
     }
 
 
+>>>>>>> kpi-ua/master
 
 .container {
 }
 
 .main {
+<<<<<<< HEAD
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #FFFFFF;
+  border-color: -moz-use-text-color #CCCCCC #0D0D5A;
+  -webkit-border-image: none;
+  -moz-border-image: none;
+  -ms-border-image: none;
+  -o-border-image: none;
+  border-image: none;
+  border-left: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  border-style: none solid solid;
+  border-width: 0 1px 3px;
+  -webkit-box-shadow: 0 0 18px #CCCCCC;
+  -ms-box-shadow: 0 0 18px #CCCCCC;
+  box-shadow: 0 0 18px #CCCCCC;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+.main-menu {
+  background-image: url("/images/books.jpg");
+  border-bottom: 1px solid #777777;
+  box-shadow: 0 15px 15px -15px #CCCCCC;
+  position: fixed;
+  text-align: right;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.main-menu a {
+  color: #FFFFFF;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+header {
+  border-bottom: 1px solid #AAAAAA;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header h1 {
+  font-size: 23pt;
+  margin-bottom: 29px;
+  margin-top: 0;
+}
+
+header h2 {
+  font-size: 14pt;
+  margin-top: 11px;
+}
+
+.breadcrumb {
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+
+.breadcrumb a {
+  color: #000;
+}
+
+.content {
+  /*padding: 25px 20px 50px;*/
+  padding-bottom: 15px;
+=======
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -156,6 +302,7 @@ header {
 .content {
     /*padding: 25px 20px 50px;*/
     padding-bottom: 15px;
+>>>>>>> kpi-ua/master
 }
 
 /*.language-list {
@@ -163,6 +310,41 @@ header {
 }*/
 
 footer {
+<<<<<<< HEAD
+  color: #777777;
+  font-size: 8pt;
+  padding: 10px 10px 40px;
+  text-align: left !important;
+}
+
+footer .row {
+  border-bottom: 1px solid #DDDDDD;
+  box-shadow: 0 15px 15px -15px #CCCCCC;
+  margin-bottom: 20px;
+  padding: 22px 20px 20px;
+  border-top: none;
+}
+
+footer .row:last-child {
+  border: medium none !important;
+  -webkit-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+
+footer menu {
+  text-align: left;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clear {
+  clear: both;
+=======
     color: #777777;
     font-size: 8pt;
     padding: 10px 10px 40px;
@@ -196,11 +378,48 @@ footer {
 
 .clear {
     clear: both;
+>>>>>>> kpi-ua/master
 }
 
 .small-logo {
 }
 
+<<<<<<< HEAD
+.small-logo img {
+  width: 50px;
+}
+
+.social {
+  margin-top: 50px;
+}
+
+.search {
+  background: none repeat scroll 0 0 #FFFFFF;
+  margin-top: 20px;
+  padding: 0;
+  width: 100%;
+}
+
+.gsc-result, .gs-bidi-start-align, .gs-snippet, .gcsc-branding-text,
+.gsc-result .gs-title, .gsc-orderby-label, .gsc-inline-block, .gsc-result-info {
+  font-family: 'Scada', sans-serif;
+}
+
+.gs-image-box.gs-web-image-box.gs-web-image-box-portrait {
+  margin-right: 10px;
+}
+
+.word-wrap {
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.gsc-control-cse {
+  padding: 0 !important;
+=======
     .small-logo img {
         width: 50px;
     }
@@ -215,12 +434,39 @@ footer {
     margin-top: 20px;
     padding: 0;
     width: 100%;
+>>>>>>> kpi-ua/master
 }
 
 .search-button {
 }
 
 @media (max-width: 768px) {
+<<<<<<< HEAD
+  header, footer {
+    text-align: center !important;
+  }
+
+  footer ul {
+    padding-bottom: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .main {
+    margin-top: 20px;
+  }
+
+  .main-menu {
+    position: relative !important;
+  }
+
+  .main-menu a {
+    display: block;
+    text-align: center;
+    -ms-text-shadow: 1px 1px 1px #000000;
+    text-shadow: 1px 1px 1px #000000;
+  }
+=======
     header, footer {
         text-align: center !important;
     }
@@ -245,4 +491,5 @@ footer {
             -ms-text-shadow: 1px 1px 1px #000000;
             text-shadow: 1px 1px 1px #000000;
         }
+>>>>>>> kpi-ua/master
 }

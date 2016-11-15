@@ -139,4 +139,101 @@ angular.module('directoryApp')
       });
     };
 
+<<<<<<< HEAD
+    /**
+     *
+     */
+    this.getCurriculumLocalization = function (id, language) {
+      var url = 'Directory/getCurriculumLocalization?id=' + id + '&language=' + language;
+      return campus.execute('GET', url).then(function (response) {
+
+        if (!!response && !!response.Data) {
+          var o = response.Data;
+          return {
+            title: o.Title,
+            annotation: o.Annotation,
+            authors: o.Authors
+          };
+        }
+
+        return null;
+      });
+    };
+
+    /**
+     *
+     */
+    this.getGenericCurriculums = function (kindId, subdivision, page) {
+      var size = 25; //Default page size
+      var url = 'Directory/GetGenericCurriculumList?kindId=' + kindId + '&subdivision=' + subdivision + '&page=' + page + '&size=' + size;
+      return campus.execute('GET', url).then(function (response) {
+
+        debugger;
+
+        var pagination = {
+          currentPage: response.Paging.PageNumber,
+          pageCount: response.Paging.PageCount,
+          pageSize: response.Paging.PageSize,
+          totalItemsCount: response.Paging.TotalItemCount
+        };
+
+        // debugger;
+
+        var items = response.Data;
+
+        if (pagination.currentPage == 1 && items.length < pagination.pageSize) {
+          pagination.pageCount = 1;
+          pagination.totalItemsCount = items.length;
+        }
+
+        return {
+          items: items,
+          pagination: pagination
+        };
+      });
+    };
+
+    this.getCurriculumLanguages = function (id) {
+      var url = 'Directory/GetCurriculumLocalizations?id=' + id;
+
+      return campus.execute('GET', url).then(function (response) {
+
+        if (!!response) {
+          return response.Data.map(function (o) {
+            return {
+              id: o.Id,
+              code: o.Code,
+              name: o.Name
+            };
+          })
+        }
+        return [];
+      });
+
+    };
+
+    this.getCurriculumFiles = function (id) {
+
+      var url = 'Ir/' + id + '/Files';
+
+      return campus.execute('GET', url).then(function (response) {
+
+        if (!!response) {
+
+          var result = [];
+
+          response.forEach(function (f) {
+            result.push({downloadUrl: f.storageFileUrl, title: f.name});
+          });
+
+          return result;
+        }
+
+        return [];
+      });
+    };
+
+
+=======
+>>>>>>> kpi-ua/master
   });

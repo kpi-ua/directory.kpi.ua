@@ -15,11 +15,26 @@
     <table class="table table-condensed table-striped table-hover">
       <tr>
         <td><strong>Анотація</strong></td>
+<<<<<<< HEAD
+        <td>
+          <pre class="word-wrap" ng-if="!!curriculum.Annotation">
+            {{curriculum.Annotation}}
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Опис</strong></td>
+        <td>
+          <pre class="word-wrap" ng-if="!!curriculum.IrDescription">
+            {{curriculum.IrDescription}}
+          </pre>
+=======
         <td>{{curriculum.Annotation}}</td>
       </tr>
       <tr>
         <td><strong>Опис</strong></td>
         <td>{{curriculum.IrDescription}}</td>
+>>>>>>> kpi-ua/master
       </tr>
       <tr>
         <td><strong>Бiблiографiчна</strong> назва</td>
@@ -61,6 +76,24 @@
     <h2>Файли та матеріали</h2>
     <div class="table-responsive">
       <table class="table table-condensed table-striped table-hover">
+<<<<<<< HEAD
+        <tbody>
+        <tr ng-repeat="file in files">
+          <td>
+            <strong>
+              {{file.title}}
+            </strong>
+          </td>
+          <td>
+            <a target="_download" class="btn btn-default" href="{{file.downloadUrl}}"><i
+              class="glyphicon glyphicon-floppy-save"></i> Завантажити</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+=======
         @foreach (Core.Link file in Model.Files)
         {
         <tr>
@@ -78,21 +111,49 @@
         }
       </table>
     </div>
+>>>>>>> kpi-ua/master
   </div>
 
   <div ng-if="!!languages && languages.length > 0">
 
     <h2>Інші мови</h2>
     <ul class="pagination">
+<<<<<<< HEAD
+      <li ng-repeat="language in languages"><a href="{{language.url}}">{{language.code}}</a></li>
+    </ul>
+
+  </div>
+
+  <div ng-if="false">
+
+    <h2>Читається на таких спеціальностях</h2>
+    <ul class="list">
+      <li ng-repeat="speciality in specialities">
+        <a href="{{speciality.url}}">{{speciality.code}} - {{speciality.title}}</a>
+        {{speciality.description}}
+      </li>
+=======
       @foreach (var language in Model.Languages)
       {
       var url = String.Format("/curriculum/{0}/{1}", Model.Curriculum.IrId, language.Name);
       <li><a href="@url">@language.Code</a></li>
       }
+>>>>>>> kpi-ua/master
     </ul>
 
   </div>
 
+<<<<<<< HEAD
+  <div ng-if="false">
+
+    <h2>Читається на таких кафедрах</h2>
+    <ul class="list">
+      <li ng-repeat="cathedra in cathedras"><a href="{{cathedra.url}}">{{cathedra.title}}</a> {{ cathedra.description }}
+      </li>
+    </ul>
+
+  </div>
+=======
   <h2>Читається на таких спеціальностях</h2>
   <ul class="list">
     <li ng-repeat="speciality in specialities">
@@ -107,5 +168,6 @@
     </li>
   </ul>
 
+>>>>>>> kpi-ua/master
 
 </div>

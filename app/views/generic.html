@@ -1,1 +1,26 @@
+<<<<<<< HEAD
+<breadcrumbs>
+  <b>Загальноуніверситетські інформаційні ресурси</b>
+</breadcrumbs>
+
+
+<div class="col-md-12">
+
+  <h1>{{title}}</h1>
+  {{description}}
+  <br>
+
+  <h2 ng-if="!!subdivisionTitle">{{subdivisionTitle}}</h2>
+  <div  ng-if="!!subdivisionDescription" ng-bind-html="subdivisionDescription">
+  </div>
+
+  <h2>Тип матеріалу</h2>
+
+  <ul class="list">
+    <li ng-repeat="type in types"><a href="{{type.url}}">{{type.title}}</a></li>
+  </ul>
+
+</div>
+=======
 <p>This is the generic view.</p>
+>>>>>>> kpi-ua/master

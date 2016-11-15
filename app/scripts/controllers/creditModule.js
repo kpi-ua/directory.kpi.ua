@@ -40,8 +40,11 @@ angular.module('directoryApp')
         api.getCathedra($scope.cathedraName).then(function (cathedra) {
           $scope.cathedraTitle = cathedra.Title;
           $scope.facultyTitle = cathedra.FacultyTitle;
+<<<<<<< HEAD
+=======
 
           $scope.$apply();
+>>>>>>> kpi-ua/master
         });
 
         api.getSpeciality($scope.specialityCode).then(function (speciality) {
@@ -74,8 +77,11 @@ angular.module('directoryApp')
           });
 
           $scope.loading = false;
+<<<<<<< HEAD
+=======
           $scope.$apply();
 
+>>>>>>> kpi-ua/master
         });
 
       }

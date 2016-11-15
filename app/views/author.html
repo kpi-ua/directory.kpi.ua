@@ -1,1 +1,61 @@
+<<<<<<< HEAD
+<breadcrumbs>
+  <b>Автори інформаційних ресурсів</b>
+</breadcrumbs>
+
+<div class="col-md-12">
+  <h1>{{author.fullName}}</h1>
+
+  <h4 ng-if="author.isConfirmed">Інформація про автора</h4>
+
+  <table ng-if="author.isConfirmed" class="table">
+    <tr>
+      <td><strong>Звання</strong></td>
+      <td>{{author.academicDegree}}</td>
+    </tr>
+    <tr>
+      <td><strong>Посада</strong></td>
+      <td>{{author.status}}</td>
+    </tr>
+    <tr>
+      <td><strong>Персональна сторінка</strong></td>
+      <td><a href="{{author.url}}">{{author.url}}</a></td>
+    </tr>
+  </table>
+  <br/>
+
+  <pre ng-if="!!author.scientificInterest">
+  {{author.scientificInterest}}
+  </pre>
+
+  <h2>ЕIР</h2>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Назва</th>
+        <th>Анотація</th>
+        <th>Гриф</th>
+      </tr>
+      </thead>
+
+      <tr ng-repeat="item in eirs">
+        <td>
+          <a href="{{item.url}}">{{item.irName}}</a>
+        </td>
+        <td>
+          {{item.annotation}}
+        </td>
+        <td>
+          {{item.stamp}}
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+</div>
+=======
 <p>This is the author view.</p>
+>>>>>>> kpi-ua/master
