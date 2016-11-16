@@ -9,7 +9,7 @@
 angular.module('directoryApp')
   .directive('breadcrumbs', function () {
     return {
-      templateUrl: '/views/breadcrumbs.html',
+      templateUrl: 'views/breadcrumbs.html',
       restrict: 'E',
       transclude: true,
       link: function postLink(scope, element, attrs) {

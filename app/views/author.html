@@ -1,5 +1,5 @@
 <breadcrumbs>
-  <b>Автори інформаційних ресурсів</b>
+  <b>Автори інформаційних ресурсів</b> > <b>{{author.fullName}}</b>
 </breadcrumbs>
 
 <div class="col-md-12">
@@ -16,7 +16,7 @@
       <td><strong>Посада</strong></td>
       <td>{{author.status}}</td>
     </tr>
-    <tr>
+    <tr ng-if="!!author.url">
       <td><strong>Персональна сторінка</strong></td>
       <td><a href="{{author.url}}">{{author.url}}</a></td>
     </tr>
@@ -41,7 +41,7 @@
 
       <tr ng-repeat="item in eirs">
         <td>
-          <a href="{{item.url}}">{{item.irName}}</a>
+          <a href="{{item.url}}">{{item.name}}</a>
         </td>
         <td>
           {{item.annotation}}
