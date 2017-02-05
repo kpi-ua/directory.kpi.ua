@@ -27,14 +27,13 @@ angular.module('directoryApp')
             scientificInterest: author.ScientificInterest,
             status: author.Status,
             isConfirmed: author.IsConfirmed,
-            url: 'http://intellect.kpi.ua/profile/' + uid
-
+            url: 'https://intellect.kpi.ua/profile/' + uid
           };
 
           $scope.eirs = author.Items.map(function (o) {
             return {
-              url: '/Curriculum/' + o.IrId,
-              name: o.IrName,
+              url: '/Curriculum/' + o.Ir.Id,
+              name: o.Ir.Name,
               annotation: o.Annotation,
               stamp: o.Stamp
             };
