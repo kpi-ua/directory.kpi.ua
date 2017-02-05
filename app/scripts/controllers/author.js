@@ -33,7 +33,7 @@ angular.module('directoryApp')
 
           $scope.eirs = author.Items.map(function (o) {
             return {
-              url: '/#/Curriculum/' + o.IrId,
+              url: '/Curriculum/' + o.IrId,
               name: o.IrName,
               annotation: o.Annotation,
               stamp: o.Stamp

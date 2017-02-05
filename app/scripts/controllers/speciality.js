@@ -26,8 +26,8 @@ angular.module('directoryApp')
       $scope.facultyName = !!$route.current.params.faculty ? $route.current.params.faculty : '';
       $scope.cathedraName = !!$route.current.params.cathedra ? $route.current.params.cathedra : '';
 
-      $scope.cathedraUrl = '/#/' + $scope.facultyName + '/' + $scope.cathedraName;
-      $scope.facultyUrl = '/#/' + $scope.facultyName;
+      $scope.cathedraUrl = '/' + $scope.facultyName + '/' + $scope.cathedraName;
+      $scope.facultyUrl = '/' + $scope.facultyName;
 
       api.getCathedra($scope.cathedraName).then(function (cathedra) {
         $scope.cathedraTitle = cathedra.Title;

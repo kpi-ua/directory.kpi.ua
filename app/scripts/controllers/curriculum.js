@@ -35,7 +35,7 @@ angular.module('directoryApp')
         $scope.languages = response.map(function (o) {
           return {
             code: o.code,
-            url: '/#/curriculum/' + id + '/' + o.name
+            url: '/curriculum/' + id + '/' + o.name
           }
         });
       });
