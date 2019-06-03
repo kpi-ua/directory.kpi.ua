@@ -50,10 +50,10 @@ angular.module('directoryApp')
 
         $scope.curriculums = result.items.map(function (o) {
           return {
-            url: '/curriculum/' + o.IrId,
+            url: '/curriculum/' + o.Ir.Id,
             title: o.Title,
             description: o.Description,
-            irName: o.IrName,
+            irName: o.Ir.Name,
             annotation: o.Annotation,
             stamp: o.Stamp
           };

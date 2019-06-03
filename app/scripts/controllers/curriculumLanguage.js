@@ -22,7 +22,7 @@ angular.module('directoryApp')
       var id = $route.current.params.id;
 
       $scope.language = $route.current.params.language;
-      $scope.curriculumUrl = '/#/curriculum' + id;
+      $scope.curriculumUrl = '/curriculum' + id;
 
       api.getCurriculumLocalization(id, $scope.language).then(function (response) {
         $scope.curriculum = response;

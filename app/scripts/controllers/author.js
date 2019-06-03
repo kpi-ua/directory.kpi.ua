@@ -8,7 +8,7 @@
  * Controller of the directoryApp
  */
 angular.module('directoryApp')
-  .controller('AuthorCtrl', function () {
+  .controller('AuthorCtrl', function ($scope, $route, $location, api) {
 
     $scope.eirs = [];
     $scope.author = {};
@@ -23,10 +23,21 @@ angular.module('directoryApp')
 
         if (!!author) {
           $scope.author = {
+            fullName: author.FullName,
             scientificInterest: author.ScientificInterest,
             status: author.Status,
-
+            isConfirmed: author.IsConfirmed,
+            url: 'https://intellect.kpi.ua/profile/' + uid
           };
+
+          $scope.eirs = author.Items.map(function (o) {
+            return {
+              url: '/Curriculum/' + o.Ir.Id,
+              name: o.Ir.Name,
+              annotation: o.Annotation,
+              stamp: o.Stamp
+            };
+          });
         }
 
         $scope.loading = false;
