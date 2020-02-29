@@ -27,16 +27,18 @@ jobs:
           npm install
           npm install -g bower grunt-cli
           bower install
-
+          
       - name: Install packages & build Docker image
         run: |
+          cd ./src
           grunt build
-          cd ..
+
+      - name: Build Docker image
+        run: |
           mv ./src/dist ./docker/
           docker build ./docker --file ./docker/Dockerfile --tag ${{ env.project }}:${{ env.tag-latest }}
           docker build -t ${{ env.project }}:${{ env.tag }} -f ./docker/Dockerfile .
           docker build -t ${{ env.project }}:${{ env.tag-latest }} -f ./docker/Dockerfile .
-
 
       - name: Docker Auth
         run: docker login -u ${{ secrets.GH_USERNAME }} -p ${{ secrets.GITHUB_TOKEN }} docker.pkg.github.com
