@@ -23,7 +23,7 @@ jobs:
 
       - name: Install packages & build project
         run: |
-          cd src
+          cd ./src
           npm install
           npm install -g bower grunt-cli
           bower install
@@ -31,7 +31,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          cd ..
+          cd ./..
+          ls
           mv ./src/dist ./docker/
           docker build ./docker --file ./docker/Dockerfile --tag ${{ env.project }}:${{ env.tag-latest }}
           docker build -t ${{ env.project }}:${{ env.tag }} -f ./docker/Dockerfile .
