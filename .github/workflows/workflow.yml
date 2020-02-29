@@ -16,17 +16,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Install packages & build project
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - run: cd ./src
-
-      - name: Install NPM packages
-        run: npm install
-
-      - name: Install Grunt & build project
         run: |
+          cd src
           npm install -g grunt-cli
           npm install grunt --save-dev
           grunt build
