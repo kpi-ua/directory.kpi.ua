@@ -15,12 +15,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
       - run: cd ./src
-      - run: npm install
-      - run: npm install -g grunt-cli
-      - run: grunt build
-      - run: grunt publish
+
+      - name: Install NPM packages
+        run: npm install
+
+      - name: Install Grunt cli
+        run: npm install -g grunt-cli
+
+      - name: Build via Grunt cli
+        run: grunt build
+
+      - name: Publish via Grunt cli
+        run: grunt publish
