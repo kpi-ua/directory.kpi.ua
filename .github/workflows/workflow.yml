@@ -21,16 +21,16 @@ jobs:
         with:
           node-version: 10.x
 
-      - name: Install packages & build project
+      - name: Install packages & tools
         run: |
           cd src
           npm install
           npm install -g bower grunt-cli
           bower install
-          grunt build
 
-      - name: Build Docker image
-        run: |
+      - name: Install packages & build Docker image
+         run: |
+          grunt build
           cd ..
           mv ./src/dist ./docker/
           docker build ./docker --file ./docker/Dockerfile --tag ${{ env.project }}:${{ env.tag-latest }}
