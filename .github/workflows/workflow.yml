@@ -4,7 +4,7 @@ env:
   project: 'directory-kpi-ua'
   tag: ${{ github.sha }}
   tag-latest: 'latest'
-  github-registry-url: 'docker.pkg.github.com/kpi-ua/intellect.kpi.ua/'
+  github-registry-url: 'docker.pkg.github.com/kpi-ua/directory.kpi.ua/'
   dockerhub-organization: 'kpiua/'
 
 on: [push]
