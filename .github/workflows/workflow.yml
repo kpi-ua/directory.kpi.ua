@@ -23,7 +23,7 @@ jobs:
 
       - name: Install packages & tools
         run: |
-          cd src
+          cd ./src
           npm install
           npm install -g bower grunt-cli
           bower install
