@@ -28,3 +28,27 @@ jobs:
           npm install -g bower grunt-cli
           bower install
           grunt build
+
+      - name: Build Docker image
+        run: |
+          cd ..
+          mv ./src/dist ./docker/
+          docker build ./docker --file ./docker/Dockerfile --tag ${{ env.project }}:${{ env.tag-latest }}
+          docker build -t ${{ env.project }}:${{ env.tag }} -f ./docker/Dockerfile .
+          docker build -t ${{ env.project }}:${{ env.tag-latest }} -f ./docker/Dockerfile .
+
+
+      - name: Docker Auth
+        run: docker login -u ${{ secrets.GH_USERNAME }} -p ${{ secrets.GITHUB_TOKEN }} docker.pkg.github.com
+
+      - name: Push the Docker image (release tag)
+        run: |
+          docker tag ${{ env.project }}:${{ env.tag }} ${{ env.docker-registry-url }}${{ env.project }}:${{ env.tag }}
+          docker push ${{ env.docker-registry-url }}${{ env.project }}:${{ env.tag }}
+
+      - name: Push the Docker image (latest tag)
+        run: |
+          docker tag ${{ env.project }}:${{ env.tag-latest }} ${{ env.docker-registry-url }}${{ env.project }}:${{ env.tag-latest }}
+          docker push ${{ env.docker-registry-url }}${{ env.project }}:${{ env.tag-latest }}
+
+
