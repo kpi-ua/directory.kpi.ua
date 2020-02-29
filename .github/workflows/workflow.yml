@@ -25,11 +25,9 @@ jobs:
       - name: Install NPM packages
         run: npm install
 
-      - name: Install Grunt cli
-        run: npm install -g grunt-cli
-
-      - name: Build via Grunt cli
-        run: grunt build
-
-      - name: Publish via Grunt cli
-        run: grunt publish
+      - name: Install Grunt & build project
+        run: |
+          npm install -g grunt-cli
+          npm install grunt --save-dev
+          grunt build
+          grunt publish
