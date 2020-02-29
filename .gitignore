@@ -257,3 +257,6 @@ paket-files/
 /.tmp
 /.sass-cache
 /bower_components
+
+/docker/dist/
+/src/bower_components/
