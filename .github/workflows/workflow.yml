@@ -25,7 +25,7 @@ jobs:
         run: |
           cd src
           npm install
-          npm install -g grunt-cli
-          npm install grunt --save-dev
+          npm install -g bower grunt-cli
+          bower install
           grunt build
           grunt publish
