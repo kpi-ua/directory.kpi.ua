@@ -29,7 +29,7 @@ jobs:
           bower install
 
       - name: Install packages & build Docker image
-         run: |
+        run: |
           grunt build
           cd ..
           mv ./src/dist ./docker/
