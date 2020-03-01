@@ -1,12 +1,10 @@
-# directory
-
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+# Інформаційні ресурси КПІ
 
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
 
-## Testing
+## Docker
 
-Running `grunt test` will run the unit tests with karma.
+Run container:<br />
+**docker run --rm -it -p 8000:80 kpiua/directory-kpi-ua:latest**
