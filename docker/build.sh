@@ -47,6 +47,8 @@ npm install -g bower grunt-cli
 bower install
 grunt build
 
+mv ./dist ./../docker
+
 #################################################################################
 
 cd "$root_dir"/docker || exit
