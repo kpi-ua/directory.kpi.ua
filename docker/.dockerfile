@@ -1,4 +1,4 @@
 FROM nginx:alpine
 
-WORKDIR /
+WORKDIR /app
 COPY ./dist/ /usr/share/nginx/html
