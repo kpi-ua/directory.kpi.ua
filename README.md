@@ -6,5 +6,12 @@ Run `grunt` for building and `grunt serve` for preview.
 
 ## Docker
 
-Run container:<br />
-**docker run --rm -it -p 8000:80 kpiua/directory-kpi-ua:latest**
+### Build
+```
+docker build ./ --file ./.dockerfile --tag directory.kpi.ua:test
+```
+### Run
+```
+docker run --rm -it -p 8000:80 directory.kpi.ua:test
+```
+ 
