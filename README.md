@@ -1,4 +1,8 @@
-# Інформаційні ресурси КПІ
+# directory.kpi.ua
+![example workflow](https://github.com/kpi-ua/directory.kpi.ua/actions/workflows/workflow.yml/badge.svg)
+
+Available at [Docker hub](https://hub.docker.com/r/kpiua/directory.kpi.ua)
+
 
 ## Build & development
 
@@ -14,4 +18,3 @@ docker build ./ --file ./.dockerfile --tag directory.kpi.ua:test
 ```
 docker run --rm -it -p 8000:80 directory.kpi.ua:test
 ```
- 
